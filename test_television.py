@@ -1,7 +1,7 @@
 import pytest
 from television import *
 
-def test_constructor():
+def test_init():
     tv = Television()
     assert str(tv) == f"Power = False, Channel = {Television.MIN_CHANNEL}, Volume = {Television.MIN_VOLUME}"
 

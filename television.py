@@ -7,7 +7,11 @@ class Television():
     MIN_CHANNEL: int = 0
     MAX_CHANNEL: int = 3
 
-    def __init__(self):
+    def __init__(self) -> None:
+        """
+        Creates a new TV that is turned off and not muted by default.
+        Its volume and channel are also initalized to the default minimum.
+        """
         self.__status = False
         self.__muted = False
         self.__volume = Television.MIN_VOLUME
@@ -77,4 +81,8 @@ class Television():
         self.__volume = max(self.__volume - 1, Television.MIN_VOLUME)
 
     def __str__(self) -> str:
+        """
+        Returns a string representation of the TV's current state with the
+        format:  'Power = *current power state*, Channel = *current channel num*, Volume = *current volume, 0 if muted*'
+        """
         return f"Power = {self.__status}, Channel = {self.__channel}, Volume = {self.__volume if not self.__muted else 0}"
